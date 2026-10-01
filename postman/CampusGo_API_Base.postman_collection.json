@@ -1,30 +1,57 @@
 {
-  "info": {
-    "_postman_id": "campusgo-base-lab-2026",
-    "name": "CampusGo API - Base Laboratorio",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-  },
-  "variable": [
-    {
-      "key": "base_url",
-      "value": "http://127.0.0.1:5000"
-    }
-  ],
-  "item": [
-    {
-      "name": "00 - Estado API",
-      "request": {
-        "method": "GET",
-        "url": {
-          "raw": "{{base_url}}/",
-          "host": [
-            "{{base_url}}"
-          ],
-          "path": [
-            ""
-          ]
+    "info": {
+        "_postman_id": "campusgo-base-lab-2026",
+        "name": "CampusGo API - Base Laboratorio",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "variable": [
+        {
+            "key": "base_url",
+            "value": "https://api-campusgo.onrender.com"
         }
-      }
-    }
-  ]
+    ],
+    "item": [
+        {
+            "name": "00 - Estado API",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "{{base_url}}/",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        ""
+                    ]
+                }
+            }
+        },
+        {
+            "name": "01 - Login",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"email\": \"admin@campusgo.com\",\n    \"password\": \"admin123\"\n}"
+                },
+                "url": {
+                    "raw": "{{base_url}}/api/auth/login",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "auth",
+                        "login"
+                    ]
+                }
+            }
+        }
+    ]
 }
